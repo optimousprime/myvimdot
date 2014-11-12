@@ -47,12 +47,6 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
 
-"move cursor when insert mode
-imap <C-h> <C-o>h
-imap <C-j> <C-o>j
-imap <C-k> <C-o>k
-imap <C-l> <C-o>l
-
 
 "open help in expanded window
 set helpheight=999
@@ -64,11 +58,49 @@ nnoremap <Leader>te :tabe<space>
 nnoremap <Leader>tk :tabn<return>
 nnoremap <Leader>tj :tabp<return>
 
+
+" ==================================================
+" " Windows / Splits
+" " ==================================================
+" " ctrl-jklm changes to that split
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" " and lets make these all work in insert mode too ( <C-O> makes next cmd
+" " happen as if in command mode )
+imap <C-W> <C-O><C-W>
+
+" " use - and + to resize horizontal splits
+map - <C-W>-
+map + <C-W>+
+
+" " and for vsplits with alt-< or alt->
+map <M-,> <C-W>>
+map <M-.> <C-W><
+
+" F2 close current window (commonly used with my F1/F3 functions)
+noremap <f2> <Esc>:close<CR><Esc>
+
+" " ==================================================
+" " Search
+" " ==================================================
+" " Press Ctrl-N to turn off highlighting.
+set hlsearch " highlight searches
+set incsearch " do incremental searching
+set ignorecase " ignore case when searching
+set smartcase " if searching and search contains upper case, make case
+" sensitive search
+nmap <silent> <C-N> :silent noh<CR>
+
+
 "####################### End of Options ##################
 
 
 "######################Start Plugin Specific##############
 
+"Pathogen
 execute pathogen#infect()
 call pathogen#helptags()
 syntax on
@@ -95,4 +127,7 @@ set rtp+=/usr/local/lib/python2.7/dist-packages/powerline_status-dev_6b6245c5b33
 " Always show statusline
 set laststatus=2
 
+" Settings for 256 color 
+set background=light
 set t_Co=256
+colorscheme calmar256-dark
