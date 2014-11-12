@@ -1,0 +1,98 @@
+"############## Start of Options#####################
+
+
+"#####################################################
+
+
+" automatically reload vimrc when it's saved
+autocmd! bufwritepost .vimrc source %
+
+
+"define <Leader>
+let mapleader = ","
+
+"No Tab only spaces
+set expandtab
+
+"Tab definitions
+set shiftwidth=3
+set tabstop=3
+set softtabstop=3
+
+
+"Set number on
+set number
+
+"Reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
+"Disable Paste when not in Insert mode
+au InsertLeave * set nopaste
+
+"Select All
+map <Leader>a ggVG
+
+"Show All symbols
+"set list
+"set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+"set showbreak=↪
+
+
+"Keep search pattern at the center of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
+"move cursor when insert mode
+imap <C-h> <C-o>h
+imap <C-j> <C-o>j
+imap <C-k> <C-o>k
+imap <C-l> <C-o>l
+
+
+"open help in expanded window
+set helpheight=999
+
+"mappings for Tab Management
+nnoremap <Leader>tc :tabc<return>
+nnoremap <Leader>tn :tabnew<return>
+nnoremap <Leader>te :tabe<space>
+nnoremap <Leader>tk :tabn<return>
+nnoremap <Leader>tj :tabp<return>
+
+"####################### End of Options ##################
+
+
+"######################Start Plugin Specific##############
+
+execute pathogen#infect()
+call pathogen#helptags()
+syntax on
+filetype plugin indent on
+filetype plugin on
+filetype on
+
+"Pydiction config
+let g:pydiction_location = '/home/arun/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_menu_height = 3
+
+
+"Syntastic
+let g:syntastic_enable_python_checker = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
+
+"taglist
+let g:Tlist_Ctags_Cmd = '/usr/bin/ctags'
+
+"Powerline
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline_status-dev_6b6245c5b33a4a50fc6a37b13eb23f3005b583f3-py2.7.egg/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+set t_Co=256

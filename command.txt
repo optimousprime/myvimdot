@@ -1,0 +1,119 @@
+ 1990  mv .vimrc  .vimrc_old
+ 1991  mv .vim .vim_old
+ 1992  mv .viminfo .viminfo_old
+ 1994  vim .vimrc
+ 1995  mkdir .vim
+ 1996  cd .vim
+ 1997  mkdir autoload
+ 1998  mkdir bundle
+ 2000  sudo apt-get install git
+ 2001  git init
+ 2002  git commit
+ 2010  git add .
+ 2011  git commit -m "Initial Commit"
+ 2022  git add ./autoload/
+ 2023  git add ./bundle/
+ 2024  git commit 
+ 2025  cd bundle/
+ 2026  git clone https://github.com/tpope/vim-pathogen.git
+ 2027  git commit 
+ 2031  cd ../
+ 2032  git commit 
+ 2033  cd bundle/
+ 2035  cp vim-pathogen/autoload/pathogen.vim ../autoload/
+ 2036  rm -rf vim-pathogen/
+ 2037  cd ../
+ 2038  git commit 
+ 2039  git add .
+ 2040  git add --all
+ 2041  ls
+ 2042  cd bundle/
+ 2043  ls
+ 2044  git commit 
+ 2045  cd ../
+ 2046  git status
+ 2047  git diff
+ 2048  git commit 
+ 2049  cd ../
+ 2050  vim .vimrc
+ 2051  cd .vim
+ 2052  cd bundle/
+ 2060  mkdir ScrollColors
+ 2061  cd ScrollColors/
+ 2062  mkdir plugin
+ 2063  curl -LSso ~/.vim/bundle.ScrollColors/plugin http://www.vim.org/scripts/download_script.php?src_id=5966
+ 2064  sudo apt-get install curl
+ 2066  curl -LSso ~/.vim/bundle/ScrollColors/plugin/ScrollColors.vim http://www.vim.org/scripts/download_script.php?src_id=5966
+ 2071  mkdir MimicColor
+ 2072  cd MimicColor/
+ 2074  curl -LSso ~/.vim/bundle/MimicColor/mimicpack.zip http://www.vim.org/scripts/download_script.php?src_id=11619
+ 2077  unzip mimicpack.zip 
+ 2078  cp mimicpak/* .
+ 2079  cp -F mimicpak/* .
+ 2080  cp -R mimicpak/* .
+ 2082  rm -rf mimicpak
+ 2086  cd ../
+ 2087  mkdir ColorSamplerPack
+ 2088  curl -LSso ~/.vim/bundle/ColorSamplerPack/ColorSamplerPack.zip http://www.vim.org/scripts/download_script.php?src_id=18915
+ 2089  cd ColorSamplerPack/
+ 2090  unzip ColorSamplerPack.zip 
+ 2092  git commit 
+ 2093  cd ../../
+ 2094  git add --all
+ 2095  git commit 
+ 2096  cd bundle/
+ 2100  git add --all
+ 2101  git commit
+ 2102  git clone https://github.com/rkulla/pydiction.git 
+ 2147  git clone https://github.com/scrooloose/syntastic.git
+ 2156  sudo apt-get install clang
+ 2163  export PATH=$PATH:/usr/bin/clang-check:/usr/bin/gcc
+ 2170  cd .vim
+ 2171  cd bundle/
+ 2173  git clone https://github.com/kevinw/pyflakes-vim.git
+ 2174  git clone https://github.com/kevinw/pyflakes.git
+ 2175  ls
+ 2176  cd pyflakes
+ 2180  sudo python setup.py install
+ 2181  cd ../
+ 2182  ls
+ 2183  git clone https://github.com/scrooloose/nerdtree.git
+ 2186  mkdir TagList
+ 2187  cd TagList
+ 2191  curl -LSso ~/.vim/bundle/TagList/taglist.zip http://www.vim.org/scripts/download_script.php?src_id=19574
+ 2192  unzip taglist.zip 
+ 2198  mkdir .vim/bundle/cscope
+ 2200  cd .vim/bundle/cscope
+ 2201  curl -LSso ~/.vim/bundle/cscope/cscope.zip http://www.vim.org/scripts/download_script.php?src_id=18067
+ 2202  unzip cscope.zip 
+ 2204  rm -rf __MACOSX/
+ 2206  cd plugin/
+ 2207  cd ../
+ 2208  mkdir cscope_macro
+ 2209  curl -LSso ~/.vim/bundle/cscope_macros/cscope_macros.vim http://www.vim.org/scripts/download_script.php?src_id=171
+ 2210  curl -LSso ~/.vim/bundle/cscope_macro/cscope_macros.vim http://www.vim.org/scripts/download_script.php?src_id=171
+ 2211  cd cscope_macro/
+ 2212  mkdir plugin
+ 2213  cp cscope_macros.vim plugin/
+ 2214  rm cscope_macros.vim 
+ 2215  ls
+ 2216  cd ../
+ 2217  git clone https://github.com/Lokaltog/powerline.git
+ 2218  vim
+ 2219  ls
+ 2220  cd powerline/
+ 2221  ls
+ 2222  sudo python setup.py install
+ 2223  vim
+ 2233  ls
+ 2240  wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+ 2241  sudo mv PowerlineSymbols.otf /usr/share/fonts/
+ 2242  sudo fc-cache -vf
+ 2243  sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+ 2244  vim
+ 2245  vim .vimrc
+ 2246  cp .vimrc .vim/.vimrc_dotfile
+ 2247  cd .vim
+ 2248  git add --all
+ 2249  git commit
+
